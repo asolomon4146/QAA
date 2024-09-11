@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#SBATCH --account=bgmp
+#SBATCH --partition=bgmp
+#SBATCH --mem=100G
+#SBATCH -c 12
+#SBATCH --mail-user=asol@uoregon.edu 
+#SBATCH --mail-type=ALL
+
+trimmomatic PE -threads 12 ../sans_adapater/sans_adapt_3_2B_control_S3_L008_R1_001.fastq.gz ../sans_adapater/sans_adapt_3_2B_control_S3_L008_R2_001.fastq.gz  sans_adapt_3_2B_control_S3_L008_R1P_001.fastq.gz sans_adapt_3_2B_control_S3_L008_R1U_001.fastq.gz sans_adapt_3_2B_control_S3_L008_R2P_001.fastq.gz sans_adapt_3_2B_control_S3_L008_R2U_001.fastq.gz LEADING:3 TRAILING:3 SLIDINGWINDOW:5:15 MINLEN:35
+trimmomatic PE -threads 12 ../sans_adapater/sans_adapt_32_4G_both_S23_L008_R1_001.fastq.gz ../sans_adapater/sans_adapt_32_4G_both_S23_L008_R1_001.fastq.gz  sans_adapt_32_4G_both_S23_L008_R1P_001.fastq.gz sans_adapt_32_4G_both_S23_L008_R1U_001.fastq.gz sans_adapt_32_4G_both_S23_L008_R2P_001.fastq.gz sans_adapt_32_4G_both_S23_L008_R2U_001.fastq.gz LEADING:3 TRAILING:3 SLIDINGWINDOW:5:15 MINLEN:35
